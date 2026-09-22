@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Circular Linked List Music Player">
+    <title>Circular Music Player</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+<div class="app">
+
+    <header>
+        <div>
+            <p class="small-title">DATA STRUCTURES & ALGORITHMS</p>
+            <h1>♪ Circular Music Player</h1>
+            <p class="subtitle">
+                Music playlist implemented using a Circular Doubly Linked List
+            </p>
+        </div>
+
+        <div class="status">
+            <span class="dot"></span>
+            Circular Linked List Active
+        </div>
+    </header>
+
+    <main>
+
+        <section class="player-card">
+
+            <div class="album">
+                <div class="vinyl">
+                    <div class="vinyl-hole"></div>
+                </div>
+            </div>
+
+            <div class="song-info">
+                <p class="now-playing">NOW PLAYING</p>
+                <h2 id="songTitle">Loading...</h2>
+                <p id="songArtist">Please wait...</p>
+
+                <div class="progress-area">
+                    <span id="currentTime">0:00</span>
+                    <input type="range" id="progress" min="0" max="100" value="0">
+                    <span id="duration">0:00</span>
+                </div>
+
+                <div class="controls">
+                    <button id="prevBtn" class="control-btn" title="Previous">⏮</button>
+                    <button id="playBtn" class="play-btn" title="Play/Pause">▶</button>
+                    <button id="nextBtn" class="control-btn" title="Next">⏭</button>
+                </div>
+
+                <div class="volume-area">
+                    <span>🔊</span>
+                    <input type="range" id="volume" min="0" max="1" step="0.01" value="0.8">
+                </div>
+
+                <p id="message" class="message"></p>
+
+                <audio id="audio" preload="metadata"></audio>
+            </div>
+        </section>
+
+        <section class="playlist-section">
+
+            <div class="section-heading">
+                <div>
+                    <p class="small-title">CIRCULAR LINKED LIST</p>
+                    <h2>Playlist Nodes</h2>
+                </div>
+
+                <div class="loop-info">
+                    HEAD ↔ TAIL ↔ HEAD
+                </div>
+            </div>
+
+            <div id="playlist" class="playlist"></div>
+
+        </section>
+
+        <section class="concept-section">
+
+            <div class="concept-card">
+                <h3>How the linked list works</h3>
+
+                <p>
+                    Each song is stored in a node. Every node contains
+                    song information and links to the next and previous node.
+                </p>
+
+                <div class="diagram">
+                    <div class="node">Song 1<br><small>Node</small></div>
+                    <span>⇄</span>
+                    <div class="node active-node">Song 2<br><small>Current</small></div>
+                    <span>⇄</span>
+                    <div class="node">Song 3<br><small>Node</small></div>
+                    <span>⇄</span>
+                    <div class="node">Song 1<br><small>Back to Head</small></div>
+                </div>
+
+                <p class="important">
+                    When the player reaches the last song and Next is pressed,
+                    the current pointer moves to the first node.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        Linked List Assignment • Circular Doubly Linked List Music Player
+    </footer>
+
+</div>
+
+<script src="/script.js"></script>
+</body>
+</html>
